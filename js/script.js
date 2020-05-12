@@ -111,7 +111,7 @@ function printQuote(array) {
 window.setInterval(printQuote, 10000);
 
 /***Random background color function which is hoisted and used in printQuote()
-* I used this resource to for this code instruction:
+* I used and modified the following code from this resource:
 *https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
 ***/
 function randomBg () {
