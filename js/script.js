@@ -76,12 +76,10 @@ let quotes = [
  * Created getRandomQuote function
 ***/
 function getRandomQuote(array) {
-         let randomNum = Math.floor(Math.random() * quotes.length);
-         return quotes[randomNum];       
+       let randomNum = Math.floor(Math.random() * quotes.length);
+       return quotes[randomNum];       
 }
 getRandomQuote(quotes);
-//used console.log to test the function in the console
-console.log(getRandomQuote(quotes));
 
 /***
  * Cread the `printQuote` function using the getRandomQuote function. 
@@ -103,7 +101,7 @@ function printQuote(array) {
       if (randomQuote.tags) {
         quoteHTML += '<span class="tags">' + randomQuote.tags + '</span>';
       }
-      quoteHTML += '</p>'
+      quoteHTML += '</p>';
      return document.getElementById('quote-box').innerHTML = quoteHTML;
 } 
 
