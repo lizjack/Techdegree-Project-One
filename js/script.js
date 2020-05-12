@@ -48,19 +48,28 @@ let quotes = [
 ***/
 function getRandomQuote(array) {
          let randomNum = Math.floor(Math.random() * quotes.length);
-         let randomQuote = quotes[randomNum];
-         return randomQuote;
-         console.log(randomQuote);
+         return quotes[randomNum];        
+         // this isn't running in the function console.log(randomQuote);
 }
+getRandomQuote(quotes);
 console.log(getRandomQuote(quotes));
-
 
 /***
  * `printQuote` function
 ***/
 function printQuote(array) {
-
-}
+       let randomQuote = getRandomQuote(quotes);
+       let quoteHTML = '<p class="quote">' + randomQuote.quote + '</p>'; 
+      quoteHTML += '<p class="source">' + randomQuote.source;
+      if (randomQuote.citation) {
+        quoteHTML += '<span class="citation">' + randomQuote.citation + '</span>';
+      }
+      if (randomQuote.year) {
+          quoteHTML += '<span class="year">' + randomQuote.year + '</span>';
+      } 
+      quoteHTML += '</p>'
+     return document.getElementById('quote-box').innerHTML = quoteHTML;
+} 
 
 
 /***
