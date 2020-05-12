@@ -8,7 +8,7 @@ project 1 - A Random Quote Generator
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
- * Here I create `quotes` array filled with objects of quotes and additional information
+ * Here I create `quotes` array filled with objects
 ***/
 let quotes = [
           {
@@ -20,7 +20,7 @@ let quotes = [
           {
             quote: 'We are capable of building community anywhere.',
             source: 'Austin Channing Brown',
-            citation: 'Im Still Here',
+            citation: 'I\'m Still Here',
             year: 2018
           },
           {
@@ -73,7 +73,7 @@ let quotes = [
 ];
 
 /***
- * Here I create the `getRandomQuote` function with math.floor() and math.random() to pick a random object within the quotes array
+ * Created getRandomQuote function
 ***/
 function getRandomQuote(array) {
          let randomNum = Math.floor(Math.random() * quotes.length);
@@ -84,12 +84,13 @@ getRandomQuote(quotes);
 console.log(getRandomQuote(quotes));
 
 /***
- * Here I created the `printQuote` function using the getRandomQuote function. 
- * Next, I concatendated the HTML strings and pulled the object's quote and source properties and used quoteHTML to store it.
- * Next, I created if statements to include the additional object properties.
- * Finally, I set the code snippet given to me from the project instructions equal to quoteHTML to update the HTML.
+ * Cread the `printQuote` function using the getRandomQuote function. 
+ * Concatendated the HTML strings and pulled the object's quote and source properties
+ * Included additional object properties in cond. statements
+ * Updated quoteHTML
 ***/
 function printQuote(array) {
+  randomBg();
        let randomQuote = getRandomQuote(quotes);
        let quoteHTML = '<p class="quote">' + randomQuote.quote + '</p>'; 
       quoteHTML += '<p class="source">' + randomQuote.source;
@@ -106,16 +107,23 @@ function printQuote(array) {
      return document.getElementById('quote-box').innerHTML = quoteHTML;
 } 
 
-/***Next, I use the printQuote in the setInterval() method. I learned about 
- * I learned about setInterval() method from https://www.w3schools.com/js/js_timing.asp.
+/***Put the printQuote in the setInterval() method.
  ***/
 
-window.setInterval(printQuote, 20000);
+window.setInterval(printQuote, 10000);
 
-//My random background color function.
+/***Random background color function which is hoisted and used in printQuote()
+* I used this resource to for this code instruction:
+*https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
+***/
+function randomBg () {
+  let x = Math.floor(Math.random() * 256);
+  let y = Math.floor(Math.random() * 256);
+  let z = Math.floor(Math.random() * 256);
+  let randomBackground = "rgb(" + x + "," + y + "," + z + ")";
 
-
-
+  return document.body.style.background = randomBackground;
+}
 
 
 /***
