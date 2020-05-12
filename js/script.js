@@ -37,7 +37,7 @@ let quotes = [
             year: 2020
           },
           {
-            quote: 'I\'m streetlight, chillng in the heat. I illuminate the stories of the people in the street.',
+            quote: 'I\'m a streetlight, chillng in the heat. I illuminate the stories of the people in the street.',
             source: 'Usnavi',
             citation: 'In the Heights',
             year: 2005
@@ -105,6 +105,17 @@ function printQuote(array) {
       quoteHTML += '</p>'
      return document.getElementById('quote-box').innerHTML = quoteHTML;
 } 
+
+/***Next, I use the printQuote in the setInterval() method. I learned about 
+ * I learned about setInterval() method from https://www.w3schools.com/js/js_timing.asp.
+ ***/
+
+window.setInterval(printQuote, 20000);
+
+//My random background color function.
+
+
+
 
 
 /***
